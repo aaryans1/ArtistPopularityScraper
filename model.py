@@ -3,6 +3,8 @@ import sqlite3
 import json
 import os
 import matplotlib.pyplot as plt
+from dotenv import load_dotenv
+load_dotenv()
 
 def read_data(filename):
     full_path = os.path.join(os.path.dirname(__file__), filename)
