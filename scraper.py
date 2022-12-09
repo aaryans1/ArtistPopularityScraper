@@ -6,13 +6,16 @@ import os
 def getSongData(endings_list, cur,conn):
     cur.execute("SELECT COUNT(*) FROM top_song_artists")
     table_size = cur.fetchone()[0]
-    baseURL = 'https://www.rollingstone.com/music/music-lists/best-songs-of-all-time-1224767/kanye-west-stronger-1224837/'
+    baseURL = 'https://www.billboard.com/charts/hot-100/'
     if table_size == 0:
-        url = baseURL
+        url = 'https://www.shazam.com/charts/top-200/world'
         r = requests.get(url)
         soup = BeautifulSoup(r.text, 'html.parser')
-        song_id = 500
-        song_list = soup.find_all('div', class_="a-featured-list")
+        song_id = 100
+        song_list = soup.find_all(
+            'div', class_ = "titleArtistContainer")
+        temp1 = song_list[0]
+        song_list = temp1.find_all('div')
         for i in range(0, 25):
             temp_title_artist = song_list[i].split(',')
             temp_title = temp_title_artist[1]
