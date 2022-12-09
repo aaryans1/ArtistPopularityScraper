@@ -20,7 +20,7 @@ def open_database(db_name):
     return cur, conn
 
 def make_top_song_artists_table(cur, conn):
-    cur.execute("CREATE TABLE IF NOT EXISTS top_song_artists (song_id INTEGER PRIMARY KEY, song_name TEXT, artist_name TEXT, page_num INTEGER)")
+    cur.execute("CREATE TABLE IF NOT EXISTS top_song_artists (song_id INTEGER PRIMARY KEY UNIQUE, song_name TEXT, artist_name TEXT)")
     conn.commit()
 
 def main():
