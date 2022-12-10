@@ -6,6 +6,8 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from webdriver_manager.chrome import ChromeDriverManager
 import time
+import spotipy
+from spotipy.oauth2 import SpotifyClientCredentials
 
 def getSongData(cur,conn):
     
@@ -50,18 +52,6 @@ def getSongData(cur,conn):
             
             
         conn.commit()
-    
-    
-        # url = baseURL + endings_list[i]
-    #class c-gallery-vertical-album__title
-        # song_list = soup.find_all('div', class_="c-gallery-vertical-album__title")
-        # cur.execute("SELECT Employees.first_name, Employees.last_name \
-        #         FROM Employees JOIN Jobs ON Employees.job_id = jobs.job_id WHERE Employees.salary > jobs.max_salary OR Employees.salary < jobs.min_salary")
-       
-        # if table_size % 2 != 0:
-        #     index = 25
-        # else:
-        #     index = 0
 
 def open_database(db_name):
     path = os.path.dirname(os.path.abspath(__file__))
@@ -69,11 +59,26 @@ def open_database(db_name):
     cur = conn.cursor()
     return cur, conn
 
+def getSpotifySongData(cur,conn):
+    spotify = spotipy.Spotify(
+        client_credentials_manager=SpotifyClientCredentials())
+
+    cur.execute("SELECT DISTINCT artist_name FROM top_song_artists")
+    spotify_artists = cur.fetchall()
+
+
+
+    for artist in spotify_artists:
+
+        results = spotify.search(q='artist:' + artist[0], type='artist')
+        print(results)
+
 def main():
     cur, conn = open_database('finalProjectDB.db')
     #### YOUR CODE HERE####
 
     getSongData(cur, conn)
+    getSpotifySongData(cur,conn)
    
     # Call the functions getSongData(soup) and on your soup object.
     

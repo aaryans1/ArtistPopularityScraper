@@ -23,6 +23,15 @@ def make_top_song_artists_table(cur, conn):
     cur.execute("CREATE TABLE IF NOT EXISTS top_song_artists (song_id INTEGER PRIMARY KEY UNIQUE, song_name TEXT, artist_name TEXT)")
     conn.commit()
 
+def make_spotify_songs_table(cur, conn):
+    cur.execute(
+        "CREATE TABLE IF NOT EXISTS spotify_songs_table(song_id INTEGER PRIMARY KEY UNIQUE, song_name TEXT, artist_name TEXT, song_popularity INTEGER, artist_id INTEGER)")
+    conn.commit()
+def make_spotify_artists_table(cur,conn):
+    cur.execute(
+        "CREATE TABLE IF NOT EXISTS spotify_artists_table(id INTEGER PRIMARY KEY UNIQUE, artist_name TEXT, artist_popularity INTEGER, artist_followers INTEGER, artist_spotify_id INTEGER)")
+    conn.commit()
+
 def main():
     cur, conn = open_database('finalProjectDB.db')
     make_top_song_artists_table(cur, conn)
