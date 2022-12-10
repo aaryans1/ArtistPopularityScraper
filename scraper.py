@@ -72,6 +72,9 @@ def getSpotifySongData(cur,conn):
 
         results = spotify.search(q='artist:' + artist[0], type='artist')
         print(results)
+        spotify_id = ['items'][0]['id']
+        followers = ['items'][0]['followers']
+        popularity = ['items'][0]['popularity']
 
 def main():
     cur, conn = open_database('finalProjectDB.db')
