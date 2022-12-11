@@ -37,7 +37,7 @@ def getSongData(cur,conn):
                 temp_artist = temp_artist.split(',')[0]
                 temp_artist = temp_artist.split('&')[0]
                 temp_artist = temp_artist.strip()
-                temp_artist = temp_artist.split('(')[0].strip()
+                temp_title = temp_title.split('(')[0].strip()
 
 
 
@@ -55,7 +55,7 @@ def getSongData(cur,conn):
                 temp_artist = temp_artist.split(',')[0]
                 temp_artist = temp_artist.split('&')[0]
                 temp_artist = temp_artist.strip()
-                temp_artist = temp_artist.split('(')[0].strip()
+                temp_title = temp_title.split('(')[0].strip()
 
                 # INSERT OR IGNORE INTO Employees(employee_id, first_name, last_name, job_id, hire_date, salary) VALUES (?,?,?,?,?,?)', (emp_id, first_name,last_name,job_id, hire_date,salary))
                 cur.execute("INSERT INTO top_song_artists(artist_id, song_name, artist_name) VALUES(?,?,?)",
@@ -191,12 +191,12 @@ def main():
 
     #getSongData(cur, conn)
     # getSpotifySongData(cur,conn)
+    for i in range(8):
+        getSongData(cur,conn)
     # for i in range(8):
-    #     getSongData(cur,conn)
-    for i in range(8):
-        getSpotifySongData(cur,conn)
-    for i in range(8):
-        getTwitterUserData(cur,conn)
+    #     getSpotifySongData(cur,conn)
+    # for i in range(8):
+    #     getTwitterUserData(cur,conn)
     # Call the functions getSongData(soup) and on your soup object.
     
     conn.close()
