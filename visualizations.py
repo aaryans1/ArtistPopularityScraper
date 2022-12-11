@@ -43,7 +43,7 @@ def create_visual_one(cur, conn):
         shazam_track_POP = shazam_track_POP_search['tracks']['items'][0]['popularity']
         top_track_POP_list.append(top_track_POP)
         shazam_track_POP_list.append(shazam_track_POP)
-        print(top_track_POP)
+        # print(top_track_POP)
 
     cur.execute("SELECT spotify_artists_table.artist_top_track_id, top_song_artists.song_name, top_song_artists.artist_name \
         FROM spotify_artists_table JOIN top_song_artists ON spotify_artists_table.artist_id = top_song_artists.artist_id \
@@ -70,23 +70,24 @@ def create_visual_one(cur, conn):
 
 
     X = 10
-    width = 0.35
-    ind = np.arrange(X) 
+    width = .35
+    ind = np.arange(X) 
 
     fig, ax = plt.subplots()
-
-    bar1 = ax.bar(ind, top_track_POP_list, width, color="yellow")
-    bar2 = ax.bar(ind + width, shazam_track_POP_list, width, color="blue")
+    plt.figure(figsize=(20, 3))
+    year_width = .8
+    bar1 = ax.bar(ind - year_width / 4, top_track_POP_list, width, color="yellow")
+    bar2 = ax.bar((ind + year_width)  / 4, shazam_track_POP_list, width, color="blue")
 
     #legend
     ax.set_xticks(ind + width / 2)
-    ax.set_xticklabels = [artist_list[0], artist_list[1], artist_list[2], artist_list[3], artist_list[4], artist_list[5], artist_list[6], artist_list[7], artist_list[8], artist_list[10]]
+    ax.set_xticklabels((artist_list[0], artist_list[1], artist_list[2], artist_list[3], artist_list[4], artist_list[5], artist_list[6], artist_list[7], artist_list[8], artist_list[9]))
     ax.legend((bar1[0], bar2[0]), ("Top Song", "Shazam Song"))
     ax.autoscale_view
 
     #set x, y axis and title
     ax.set(xlabel = "Artist", ylabel = "Popularity", title="Top Song Popularity vs Shazam Song Popularity for Top 10 Artists")
-    fig.savefig("TrackPopularityGraph")
+    fig.savefig("TrackPopularityGraph.png")
     plt.show()
 
 
