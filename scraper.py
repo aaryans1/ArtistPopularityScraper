@@ -10,7 +10,7 @@ import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 from dotenv import load_dotenv
 import tweepy
-import json
+import re
 load_dotenv()
 
 def getSongData(cur,conn):
@@ -37,6 +37,8 @@ def getSongData(cur,conn):
                 temp_artist = temp_artist.split(',')[0]
                 temp_artist = temp_artist.split('&')[0]
                 temp_artist = temp_artist.strip()
+                temp_artist = temp_artist.split('(')[0].strip()
+
 
 
                 # INSERT OR IGNORE INTO Employees(employee_id, first_name, last_name, job_id, hire_date, salary) VALUES (?,?,?,?,?,?)', (emp_id, first_name,last_name,job_id, hire_date,salary))
@@ -46,11 +48,14 @@ def getSongData(cur,conn):
             for i in range(0, 25):
                 cur.execute("SELECT COUNT(*) FROM top_song_artists")
                 table_size = cur.fetchone()[0]
+                if table_size == 200:
+                    break
                 temp_title = song_list[table_size].text
                 temp_artist = artist_list[table_size].text
                 temp_artist = temp_artist.split(',')[0]
                 temp_artist = temp_artist.split('&')[0]
                 temp_artist = temp_artist.strip()
+                temp_artist = temp_artist.split('(')[0].strip()
 
                 # INSERT OR IGNORE INTO Employees(employee_id, first_name, last_name, job_id, hire_date, salary) VALUES (?,?,?,?,?,?)', (emp_id, first_name,last_name,job_id, hire_date,salary))
                 cur.execute("INSERT INTO top_song_artists(artist_id, song_name, artist_name) VALUES(?,?,?)",
