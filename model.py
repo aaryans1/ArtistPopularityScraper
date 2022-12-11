@@ -5,13 +5,6 @@ import os
 import matplotlib.pyplot as plt
 from dotenv import load_dotenv
 load_dotenv()
-def read_data(filename):
-    full_path = os.path.join(os.path.dirname(__file__), filename)
-    f = open(full_path)
-    file_data = f.read()
-    f.close()
-    json_data = json.loads(file_data)
-    return json_data
 
 def open_database(db_name):
     path = os.path.dirname(os.path.abspath(__file__))
