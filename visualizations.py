@@ -43,7 +43,7 @@ def create_visual_one(cur, conn):
         shazam_track_POP = shazam_track_POP_search['tracks']['items'][0]['popularity']
         top_track_POP_list.append(top_track_POP)
         shazam_track_POP_list.append(shazam_track_POP)
-        # print(top_track_POP)
+        
 
     cur.execute("SELECT spotify_artists_table.artist_top_track_id, top_song_artists.song_name, top_song_artists.artist_name \
         FROM spotify_artists_table JOIN top_song_artists ON spotify_artists_table.artist_id = top_song_artists.artist_id \
@@ -96,7 +96,7 @@ def create_visual_two(cur,conn):
         ORDER BY twitter_artists_table.artist_followers DESC LIMIT 10")
     pop_list = cur.fetchall()
     
-    #justin bieber - 113,000,000 followers 
+
 
     spotify_POP_list = []
     for s, _, _ in pop_list:
@@ -138,6 +138,15 @@ def create_visual_two(cur,conn):
     ax.set(xlabel = "Artist", ylabel = "Popularity (%)", title="Top 10 Shazamed Artist's Popularity on Spotify vs Twitter")
     fig.savefig("ArtistPopularityGraph.png")
     plt.show()
+
+
+    cur.execute("SELECT spotify_artists_table.artist_popularity, twitter_artists_table.artist_followers, spotify_artists_table.artist_name \
+        FROM spotify_artists_table JOIN twitter_artists_table ON spotify_artists_table.artist_id = twitter_artists_table.artist_id \
+        ORDER BY twitter_artists_table.artist_followers DESC")
+    pop_list_total = cur.fetchall()
+    with open('artist_popularity_calc.txt', 'w') as f:
+        for data in pop_list_total:
+            f.write((str(pop_list_total[data][2])) + " has a Spotify popularity index of " + pop_list_total[data][0] + " and a Twitter popularity index of  " + pop_list_total[data][1] +".\n")
         
 
     
@@ -149,7 +158,7 @@ def create_visual_two(cur,conn):
     
 def main():
     cur, conn = open_database('finalProjectDB.db')
-    #create_visual_one(cur, conn)
+    create_visual_one(cur, conn)
     create_visual_two(cur,conn)
 
 
