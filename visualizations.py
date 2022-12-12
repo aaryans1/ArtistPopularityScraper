@@ -74,7 +74,7 @@ def create_visual_one(cur, conn):
 def create_visual_two(cur,conn):
     cur.execute("SELECT spotify_artists_table.artist_followers, twitter_artists_table.artist_followers, spotify_artists_table.artist_name \
         FROM spotify_artists_table JOIN twitter_artists_table ON spotify_artists_table.artist_id = twitter_artists_table.artist_id \
-        ORDER BY twitter_artists_table.artist_followers DESC LIMIT 10")
+        ORDER BY twitter_artists_table.artist_followers DESC LIMIT 15")
     pop_list = cur.fetchall()
     
 
@@ -108,7 +108,7 @@ def create_visual_two(cur,conn):
         spotify_POP_list.append(x)
         
 
-    X = 10
+    X = 15
     width = .35
     ind = np.arange(X) 
 
@@ -119,15 +119,53 @@ def create_visual_two(cur,conn):
 
     #legend
     ax.set_xticks(ind + width / 2)
-    ax.set_xticklabels((names[0], names[1], names[2], names[3], names[4], names[5], names[6], names[7], names[8], names[9]))
+    ax.set_xticklabels((names[0], names[1], names[2], names[3], names[4], names[5], names[6], names[7], names[8], names[9], names[10],names[11],names[12],names[13],names[14]))
     plt.setp(ax.get_xticklabels(), rotation=30, horizontalalignment='right')
     ax.legend((bar1[0], bar2[0]), ("Spotify Popularity Index", "Twitter Popularity Index"))
 
 
     #set x, y axis and title
-    ax.set(xlabel = "Artist", ylabel = "Popularity (%)", title="Top 10 Shazamed Artist's Popularity on Spotify vs Twitter")
+    ax.set(xlabel = "Artist", ylabel = "Popularity (%)", title="Top 1 Shazamed Artist's Popularity on Spotify vs Twitter")
     fig.savefig("ArtistPopularityGraph.png")
     plt.show()
+
+def create_visual_three(cur,conn):
+    cur.execute("SELECT spotify_artists_table.artist_followers, twitter_artists_table.artist_followers, spotify_artists_table.artist_name \
+        FROM spotify_artists_table JOIN twitter_artists_table ON spotify_artists_table.artist_id = twitter_artists_table.artist_id \
+        ORDER BY twitter_artists_table.artist_followers DESC LIMIT 15")
+    
+    list_of_artist_data = cur.fetchall()
+    spotify_followers = []
+    twitter_followers = []
+    artist_names = []
+
+    for s,t,n in list_of_artist_data:
+        spotify_followers.append(s)
+        twitter_followers.append(t)
+        artist_names.append(n)
+    
+    X = 15
+    width = .35
+    ind = np.arange(X) 
+
+    fig, ax = plt.subplots()
+    plt.figure(figsize=(20, 3))
+    bar1 = ax.bar(ind, spotify_followers, width, color="darkturquoise")
+    bar2 = ax.bar(ind + width, twitter_followers, width, color="lightcoral")
+
+    #legend
+    ax.set_xticks(ind + width / 2)
+    ax.set_xticklabels((artist_names[0], artist_names[1], artist_names[2], artist_names[3], artist_names[4], artist_names[5], artist_names[6], artist_names[7], artist_names[8], artist_names[9], artist_names[10],artist_names[11],artist_names[12],artist_names[13],artist_names[14]))
+    plt.setp(ax.get_xticklabels(), rotation=30, horizontalalignment='right')
+    ax.legend((bar1[0], bar2[0]), ("Spotify Followers", "Twitter Followers"))
+
+
+    #set x, y axis and title
+    ax.set(xlabel = "Artist", ylabel = "Followers", title="Spotify Followers vs Twitter Followers for Top 15 Artists")
+    fig.savefig("FollowersGraph.png")
+    plt.show()
+
+
 
 def create_song_popularity_calc(cur,conn):
     cur.execute("SELECT spotify_artists_table.artist_top_track_id, top_song_artists.song_name, top_song_artists.artist_name \
@@ -193,6 +231,7 @@ def main():
     cur, conn = open_database('finalProjectDB.db')
     create_visual_one(cur, conn)
     create_visual_two(cur,conn)
+    create_visual_three(cur,conn)
     create_artist_popularity_calc(cur, conn)
     create_song_popularity_calc(cur,conn)
 
