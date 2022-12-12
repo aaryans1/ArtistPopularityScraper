@@ -11,10 +11,7 @@ def open_database(db_name):
     return cur, conn
 
 
-def getTwitterUserData(cur, conn):
-    BEARER_TOKEN = os.getenv("TWITTER_BEARER_TOKEN")
-    auth = tweepy.OAuth2BearerHandler(BEARER_TOKEN)
-    api = tweepy.API(auth)
+def getTwitterUserData(cur, conn,api):
     cur.execute("SELECT spotify_artists_table.artist_id, top_song_artists.artist_name \
         FROM spotify_artists_table JOIN top_song_artists ON spotify_artists_table.artist_id = top_song_artists.artist_id")  # change to id instead of song id
     artist_list = cur.fetchall()
@@ -65,8 +62,12 @@ def getTwitterUserData(cur, conn):
 def main():
     cur, conn = open_database('finalProjectDB.db')
     #### YOUR CODE HERE####
+    # BEARER_TOKEN = os.getenv("TWITTER_BEARER_TOKEN")
+    BEARER_TOKEN = 'AAAAAAAAAAAAAAAAAAAAAHBDkQEAAAAABqp8ng0XTGA%2BDiS56pu%2FTuNTNE0%3DDzOR3baqTHMPjQvfnoEUSbCteEJTDrFcmYNNx3XshXkWcU1tNA'
+    auth = tweepy.OAuth2BearerHandler(BEARER_TOKEN)
+    api = tweepy.API(auth)
 
-    getTwitterUserData(cur,conn)
+    getTwitterUserData(cur,conn,api)
 
     conn.close()
 

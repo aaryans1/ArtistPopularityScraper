@@ -12,14 +12,7 @@ def open_database(db_name):
     return cur, conn
 
 
-def getSpotifySongData(cur, conn):
-    CLIENT_ID = os.getenv("CLIENT_ID")
-    CLIENT_SECRET = os.getenv("CLIENT_SECRET")
-    REDIRECT_URL = os.getenv("REDIRECT_URL")
-    client_credentials_manager = SpotifyClientCredentials(
-        CLIENT_ID, CLIENT_SECRET)
-    spotify = spotipy.Spotify(
-        client_credentials_manager=client_credentials_manager)
+def getSpotifySongData(cur, conn,spotify):
 
     # make sure to change song_id to
     cur.execute("SELECT DISTINCT artist_name FROM top_song_artists")
@@ -77,8 +70,18 @@ def getSpotifySongData(cur, conn):
 def main():
     cur, conn = open_database('finalProjectDB.db')
     #### YOUR CODE HERE####
+    CLIENT_ID = 'f23a7b980c684642b807c7be4fc4d799'
+    # CLIENT_SECRET = os.getenv("CLIENT_SECRET")
+    CLIENT_SECRET = 'a9aac79406ef4ab69f0ae4c0944d470a'
 
-    getSpotifySongData(cur,conn)
+    # REDIRECT_URL = os.getenv("REDIRECT_URL")
+    client_credentials_manager = SpotifyClientCredentials(
+        CLIENT_ID, CLIENT_SECRET)
+    spotify = spotipy.Spotify(
+        client_credentials_manager=client_credentials_manager)
+
+    getSpotifySongData(cur,conn,spotify)
+
 
     conn.close()
 

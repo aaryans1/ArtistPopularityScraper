@@ -2,12 +2,10 @@
 import json
 import sqlite3
 import os
-import matplotlib
 import matplotlib.pyplot as plt
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 from dotenv import load_dotenv
-import tweepy
 import numpy as np
 
 def open_database(db_name):
@@ -16,15 +14,7 @@ def open_database(db_name):
     cur = conn.cursor()
     return cur, conn
 
-def create_visual_one(cur, conn):
-    CLIENT_ID = os.getenv("CLIENT_ID")
-    CLIENT_SECRET = os.getenv("CLIENT_SECRET")
-    REDIRECT_URL = os.getenv("REDIRECT_URL")
-    client_credentials_manager = SpotifyClientCredentials(
-        CLIENT_ID, CLIENT_SECRET)
-    spotify = spotipy.Spotify(
-        client_credentials_manager=client_credentials_manager)
-
+def create_visual_one(cur, conn, spotify):
     cur.execute("SELECT spotify_artists_table.artist_top_track_id, top_song_artists.song_name, top_song_artists.artist_name \
         FROM spotify_artists_table JOIN top_song_artists ON spotify_artists_table.artist_id = top_song_artists.artist_id \
         ORDER BY spotify_artists_table.artist_followers DESC \
@@ -125,7 +115,7 @@ def create_visual_two(cur,conn):
 
 
     #set x, y axis and title
-    ax.set(xlabel = "Artist", ylabel = "Popularity (%)", title="Top 1 Shazamed Artist's Popularity on Spotify vs Twitter")
+    ax.set(xlabel = "Artist", ylabel = "Popularity (%)", title="Top 15 Shazamed Artist's Popularity on Spotify vs Twitter")
     fig.savefig("ArtistPopularityGraph.png")
     plt.show()
 
@@ -167,7 +157,7 @@ def create_visual_three(cur,conn):
 
 
 
-def create_song_popularity_calc(cur,conn):
+def create_song_popularity_calc(cur,conn,spotify):
     cur.execute("SELECT spotify_artists_table.artist_top_track_id, top_song_artists.song_name, top_song_artists.artist_name \
         FROM spotify_artists_table JOIN top_song_artists ON spotify_artists_table.artist_id = top_song_artists.artist_id \
         ORDER BY spotify_artists_table.artist_followers DESC")
@@ -229,11 +219,23 @@ def create_artist_popularity_calc(cur,conn):
     
 def main():
     cur, conn = open_database('finalProjectDB.db')
-    create_visual_one(cur, conn)
+
+     # CLIENT_ID = os.getenv("CLIENT_ID")
+    CLIENT_ID = 'f23a7b980c684642b807c7be4fc4d799'
+    # CLIENT_SECRET = os.getenv("CLIENT_SECRET")
+    CLIENT_SECRET = 'a9aac79406ef4ab69f0ae4c0944d470a'
+   
+    # REDIRECT_URL = os.getenv("REDIRECT_URL")
+    client_credentials_manager = SpotifyClientCredentials(
+        CLIENT_ID, CLIENT_SECRET)
+    spotify = spotipy.Spotify(
+        client_credentials_manager=client_credentials_manager)
+
+    create_visual_one(cur, conn,spotify)
     create_visual_two(cur,conn)
     create_visual_three(cur,conn)
     create_artist_popularity_calc(cur, conn)
-    create_song_popularity_calc(cur,conn)
+    create_song_popularity_calc(cur,conn,spotify)
 
     #### FEEL FREE TO USE THIS SPACE TO TEST OUT YOUR FUNCTIONS
 
