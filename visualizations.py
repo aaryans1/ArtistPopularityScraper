@@ -151,7 +151,7 @@ def create_visual_three(cur,conn):
 
 
     #set x, y axis and title
-    ax.set(xlabel = "Artist", ylabel = "Followers", title="Spotify Followers vs Twitter Followers for Top 15 Artists")
+    ax.set(xlabel = "Artist", ylabel = "Followers (Millions)", title="Spotify Followers vs Twitter Followers for Top 15 Artists")
     fig.savefig("FollowersGraph.png")
     plt.show()
 
