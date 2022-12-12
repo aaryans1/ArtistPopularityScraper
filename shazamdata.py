@@ -17,6 +17,8 @@ load_dotenv()
 def getSongData(cur, conn):
     cur.execute("SELECT COUNT(*) FROM top_song_artists")
     table_size = cur.fetchone()[0]
+    if table_size == 200:
+        print("You can stop running this function now!")
     url = 'https://www.shazam.com/charts/top-200/united-states'
     driver = webdriver.Chrome(ChromeDriverManager().install())
     driver.get(url)
@@ -48,6 +50,7 @@ def getSongData(cur, conn):
                 cur.execute("SELECT COUNT(*) FROM top_song_artists")
                 table_size = cur.fetchone()[0]
                 if table_size == 200:
+                    print("You can stop running this function now!")
                     break
                 temp_title = song_list[table_size].text
                 temp_artist = artist_list[table_size].text

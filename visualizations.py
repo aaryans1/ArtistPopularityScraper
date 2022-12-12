@@ -207,7 +207,8 @@ def create_artist_popularity_calc(cur,conn):
 
     with open('artist_popularity_calc.txt', 'w') as f:
         for i in range(len(pop_list_total)):
-            f.write((str(pop_list_total[i][2])) + " has a Spotify popularity index of " + str(spotify_POP_list[i]) + " and a Twitter popularity index of " + str(twitter_POP_list[i]) + ".\n")
+            f.write((str(pop_list_total[i][2])) + " has a Spotify popularity index of " 
+            + str(spotify_POP_list[i]) + " and a Twitter popularity index of " + str(twitter_POP_list[i]) + ".\n")
         
 
     
