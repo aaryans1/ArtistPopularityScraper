@@ -1,0 +1,163 @@
+Justin Bieber has a Spotify popularity index of 64 and a Twitter popularity index of 100.
+Rihanna has a Spotify popularity index of 48 and a Twitter popularity index of 94.
+Taylor Swift has a Spotify popularity index of 60 and a Twitter popularity index of 81.
+Lady Gaga has a Spotify popularity index of 22 and a Twitter popularity index of 74.
+Selena Gomez has a Spotify popularity index of 36 and a Twitter popularity index of 58.
+Drake has a Spotify popularity index of 65 and a Twitter popularity index of 35.
+Harry Styles has a Spotify popularity index of 23 and a Twitter popularity index of 33.
+Chris Brown has a Spotify popularity index of 16 and a Twitter popularity index of 28.
+Nicki Minaj has a Spotify popularity index of 25 and a Twitter popularity index of 24.
+Eminem has a Spotify popularity index of 59 and a Twitter popularity index of 20.
+Mariah Carey has a Spotify popularity index of 7 and a Twitter popularity index of 19.
+David Guetta has a Spotify popularity index of 23 and a Twitter popularity index of 17.
+Alejandro Sanz has a Spotify popularity index of 6 and a Twitter popularity index of 17.
+Ed Sheeran has a Spotify popularity index of 100 and a Twitter popularity index of 15.
+The Weeknd has a Spotify popularity index of 50 and a Twitter popularity index of 15.
+Beyoncé has a Spotify popularity index of 31 and a Twitter popularity index of 13.
+Diddy has a Spotify popularity index of 1 and a Twitter popularity index of 13.
+Kelly Clarkson has a Spotify popularity index of 8 and a Twitter popularity index of 10.
+Wizkid has a Spotify popularity index of 2 and a Twitter popularity index of 9.
+Lil Uzi Vert has a Spotify popularity index of 13 and a Twitter popularity index of 7.
+KAROL G has a Spotify popularity index of 28 and a Twitter popularity index of 7.
+Lil Nas X has a Spotify popularity index of 11 and a Twitter popularity index of 7.
+Burna Boy has a Spotify popularity index of 3 and a Twitter popularity index of 7.
+Sam Smith has a Spotify popularity index of 19 and a Twitter popularity index of 6.
+Lil Baby has a Spotify popularity index of 11 and a Twitter popularity index of 6.
+Post Malone has a Spotify popularity index of 36 and a Twitter popularity index of 6.
+SZA has a Spotify popularity index of 8 and a Twitter popularity index of 6.
+Doja Cat has a Spotify popularity index of 22 and a Twitter popularity index of 4.
+Farruko has a Spotify popularity index of 13 and a Twitter popularity index of 4.
+Tyga has a Spotify popularity index of 6 and a Twitter popularity index of 4.
+Jonas Brothers has a Spotify popularity index of 6 and a Twitter popularity index of 4.
+Bad Bunny has a Spotify popularity index of 57 and a Twitter popularity index of 4.
+Bizarrap has a Spotify popularity index of 7 and a Twitter popularity index of 3.
+Paul McCartney has a Spotify popularity index of 3 and a Twitter popularity index of 3.
+Metro Boomin has a Spotify popularity index of 3 and a Twitter popularity index of 3.
+Rema has a Spotify popularity index of 1 and a Twitter popularity index of 3.
+Quavo has a Spotify popularity index of 5 and a Twitter popularity index of 3.
+Sia has a Spotify popularity index of 23 and a Twitter popularity index of 3.
+Eagles has a Spotify popularity index of 8 and a Twitter popularity index of 3.
+Pink Floyd has a Spotify popularity index of 16 and a Twitter popularity index of 3.
+YG has a Spotify popularity index of 2 and a Twitter popularity index of 2.
+OneRepublic has a Spotify popularity index of 13 and a Twitter popularity index of 2.
+Oxlade has a Spotify popularity index of 0 and a Twitter popularity index of 2.
+French Montana has a Spotify popularity index of 4 and a Twitter popularity index of 2.
+Gwen Stefani has a Spotify popularity index of 5 and a Twitter popularity index of 2.
+Latto has a Spotify popularity index of 0 and a Twitter popularity index of 2.
+Rauw Alejandro has a Spotify popularity index of 13 and a Twitter popularity index of 2.
+Ozuna has a Spotify popularity index of 32 and a Twitter popularity index of 1.
+Aerosmith has a Spotify popularity index of 12 and a Twitter popularity index of 1.
+Lizzo has a Spotify popularity index of 4 and a Twitter popularity index of 1.
+Arcángel has a Spotify popularity index of 8 and a Twitter popularity index of 1.
+Meghan Trainor has a Spotify popularity index of 11 and a Twitter popularity index of 1.
+NLE Choppa has a Spotify popularity index of 5 and a Twitter popularity index of 1.
+Kane Brown has a Spotify popularity index of 4 and a Twitter popularity index of 1.
+Tems has a Spotify popularity index of 0 and a Twitter popularity index of 1.
+Lewis Capaldi has a Spotify popularity index of 9 and a Twitter popularity index of 1.
+Elton John has a Spotify popularity index of 9 and a Twitter popularity index of 1.
+The Neighbourhood has a Spotify popularity index of 10 and a Twitter popularity index of 0.
+Luke Combs has a Spotify popularity index of 7 and a Twitter popularity index of 0.
+Jeremih has a Spotify popularity index of 5 and a Twitter popularity index of 0.
+GloRilla has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+John Lennon has a Spotify popularity index of 4 and a Twitter popularity index of 0.
+Jazmine Sullivan has a Spotify popularity index of 1 and a Twitter popularity index of 0.
+Coi Leray has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Morgan Wallen has a Spotify popularity index of 4 and a Twitter popularity index of 0.
+Brent Faiyaz has a Spotify popularity index of 2 and a Twitter popularity index of 0.
+Darlene Love has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Lindsey Stirling has a Spotify popularity index of 1 and a Twitter popularity index of 0.
+The Smashing Pumpkins has a Spotify popularity index of 3 and a Twitter popularity index of 0.
+Zach Bryan has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Bas has a Spotify popularity index of 4 and a Twitter popularity index of 0.
+Beach House has a Spotify popularity index of 1 and a Twitter popularity index of 0.
+Manuel Turizo has a Spotify popularity index of 10 and a Twitter popularity index of 0.
+Oliver Tree has a Spotify popularity index of 1 and a Twitter popularity index of 0.
+Mariah the Scientist has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Brett Young has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+*NSYNC has a Spotify popularity index of 1 and a Twitter popularity index of 0.
+Ariana Grande has a Spotify popularity index of 80 and a Twitter popularity index of 0.
+AJR has a Spotify popularity index of 2 and a Twitter popularity index of 0.
+Omar Apollo has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Wednesday Addams has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Carly Pearce has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Glass Animals has a Spotify popularity index of 3 and a Twitter popularity index of 0.
+Jelly Roll has a Spotify popularity index of 1 and a Twitter popularity index of 0.
+Jessie Reyez has a Spotify popularity index of 1 and a Twitter popularity index of 0.
+Band Aid has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Apocalyptica has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+HARDY has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+David Foster has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Freddie Dredd has a Spotify popularity index of 1 and a Twitter popularity index of 0.
+Jax has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+MC L da Vinte has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+EST Gee has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Jordan Davis has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+RAYE has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+PinkPantheress has a Spotify popularity index of 1 and a Twitter popularity index of 0.
+Brenda Lee has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+The Pogues has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+King Combs has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Lainey Wilson has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Trans-Siberian Orchestra has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+La rappresentante di lista has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Peezy has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Real Boston Richey has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Chrishan has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Bhavi has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Future has a Spotify popularity index of 11 and a Twitter popularity index of 0.
+FaZe Kaysan has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Bellakath has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Steve Lacy has a Spotify popularity index of 2 and a Twitter popularity index of 0.
+MC Delux has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Hitkidd has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Armani White has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Wham! has a Spotify popularity index of 1 and a Twitter popularity index of 0.
+Big Boogie has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+JVKE has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Foudeqush has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+José Feliciano has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Chuck Berry has a Spotify popularity index of 1 and a Twitter popularity index of 0.
+Bailey Zimmerman has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+d4vd has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Aubrie Sellers has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+MOUNT WESTMORE has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Finesse2Tymes has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Nat "King" Cole has a Spotify popularity index of 1 and a Twitter popularity index of 0.
+Rosa Linn has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Mannheim Steamroller has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Babyface Ray has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Savatage has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Andy Williams has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Senora May has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Stephen Sanchez has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Hotel Ugly has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+TALK has a Spotify popularity index of 1 and a Twitter popularity index of 0.
+KALEO has a Spotify popularity index of 1 and a Twitter popularity index of 0.
+IVOXYGEN has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Wolf Larsen has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+charlieonnafriday has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Donny Hathaway has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Libianca has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Jengi has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Lola Brooke has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+J.K. Mac has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Tom Odell has a Spotify popularity index of 2 and a Twitter popularity index of 0.
+Beach Weather has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+The Cramps has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Feloman has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+The Ronettes has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Lambo4oe has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Asael gonzález has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Grupo Frontera has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Pallbearer4kt has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Feb Omega has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+The Waitresses has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Don Zio P has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Bobby Helms has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Moone Walker has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+The Drifters has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+$hyfromdatre has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Dj LK da Escócia has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+The Bones of J.R. Jones has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Nevermore Academy Orchestra has a Spotify popularity index of 0 and a Twitter popularity index of 0.
+Song for Memories has a Spotify popularity index of 0 and a Twitter popularity index of 0.

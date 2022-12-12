@@ -45,26 +45,7 @@ def create_visual_one(cur, conn):
         shazam_track_POP_list.append(shazam_track_POP)
         
 
-    cur.execute("SELECT spotify_artists_table.artist_top_track_id, top_song_artists.song_name, top_song_artists.artist_name \
-        FROM spotify_artists_table JOIN top_song_artists ON spotify_artists_table.artist_id = top_song_artists.artist_id \
-        ORDER BY spotify_artists_table.artist_followers DESC")
-    calc_list = cur.fetchall()
-
-    with open('song_popularity_calc.txt', 'w') as f:
-        for song in calc_list:
-            top_track_POP_search = spotify.track(song[0])
-            top_track_POP = top_track_POP_search['popularity']
-            top_track_name = top_track_POP_search['name']
-
-            shazam_track_POP_search = spotify.search(
-                'artist:' + song[2] + ' track:' + song[1], type='track')
-            if not shazam_track_POP_search['tracks']['items']:
-                shazam_track_POP_search = spotify.search(
-                    'track:' + song[1], type='track')
-            shazam_track_POP = shazam_track_POP_search['tracks']['items'][0]['popularity']
-            shazam_track_name = shazam_track_POP_search['tracks']['items'][0]['name']
-            f.write(str(song[2]) + "'s top spotify track, " + top_track_name + ", has a popularity of " + str(top_track_POP) +
-                    " and their most shazamed song, " + shazam_track_name + ", has a popularity of " + str(shazam_track_POP) + ".\n")
+    
     
 
 
@@ -91,16 +72,16 @@ def create_visual_one(cur, conn):
     plt.show()
 
 def create_visual_two(cur,conn):
-    cur.execute("SELECT spotify_artists_table.artist_popularity, twitter_artists_table.artist_followers, spotify_artists_table.artist_name \
+    cur.execute("SELECT spotify_artists_table.artist_followers, twitter_artists_table.artist_followers, spotify_artists_table.artist_name \
         FROM spotify_artists_table JOIN twitter_artists_table ON spotify_artists_table.artist_id = twitter_artists_table.artist_id \
         ORDER BY twitter_artists_table.artist_followers DESC LIMIT 10")
     pop_list = cur.fetchall()
     
 
 
-    spotify_POP_list = []
+    spotify_followers_list = []
     for s, _, _ in pop_list:
-        spotify_POP_list.append(s)
+        spotify_followers_list.append(s)
      
     twitter_followers_list = []
     for _, i, _ in pop_list:
@@ -113,9 +94,18 @@ def create_visual_two(cur,conn):
 
     
     twitter_POP_list = []
+    # top_artist_followers = 113655496
     for i in twitter_followers_list:
-        x = int((i / 113655496) * 100)
+        x = int((i / (pop_list[0][1])) * 100)
         twitter_POP_list.append(x)
+
+
+    cur.execute("SELECT MAX(artist_followers) FROM spotify_artists_table")
+    max_followers = cur.fetchone()[0]
+    spotify_POP_list = []
+    for i in spotify_followers_list:
+        x = int((i / (max_followers)) * 100)
+        spotify_POP_list.append(x)
         
 
     X = 10
@@ -139,14 +129,57 @@ def create_visual_two(cur,conn):
     fig.savefig("ArtistPopularityGraph.png")
     plt.show()
 
+def create_song_popularity_calc(cur,conn):
+    cur.execute("SELECT spotify_artists_table.artist_top_track_id, top_song_artists.song_name, top_song_artists.artist_name \
+        FROM spotify_artists_table JOIN top_song_artists ON spotify_artists_table.artist_id = top_song_artists.artist_id \
+        ORDER BY spotify_artists_table.artist_followers DESC")
+    calc_list = cur.fetchall()
 
-    cur.execute("SELECT spotify_artists_table.artist_popularity, twitter_artists_table.artist_followers, spotify_artists_table.artist_name \
+    with open('song_popularity_calc.txt', 'w') as f:
+        for song in calc_list:
+            top_track_POP_search = spotify.track(song[0])
+            top_track_POP = top_track_POP_search['popularity']
+            top_track_name = top_track_POP_search['name']
+
+            shazam_track_POP_search = spotify.search(
+                'artist:' + song[2] + ' track:' + song[1], type='track')
+            if not shazam_track_POP_search['tracks']['items']:
+                shazam_track_POP_search = spotify.search(
+                    'track:' + song[1], type='track')
+            shazam_track_POP = shazam_track_POP_search['tracks']['items'][0]['popularity']
+            shazam_track_name = shazam_track_POP_search['tracks']['items'][0]['name']
+            f.write(str(song[2]) + "'s top spotify track, " + top_track_name + ", has a popularity of " + str(top_track_POP) +
+                    " and their most shazamed song, " + shazam_track_name + ", has a popularity of " + str(shazam_track_POP) + ".\n")
+                    
+def create_artist_popularity_calc(cur,conn):
+    cur.execute("SELECT spotify_artists_table.artist_followers, twitter_artists_table.artist_followers, spotify_artists_table.artist_name \
         FROM spotify_artists_table JOIN twitter_artists_table ON spotify_artists_table.artist_id = twitter_artists_table.artist_id \
         ORDER BY twitter_artists_table.artist_followers DESC")
     pop_list_total = cur.fetchall()
+
+    twitter_followers_list = []
+    for _, i, _ in pop_list_total:
+        twitter_followers_list.append(i)
+
+    twitter_POP_list = []
+    for i in twitter_followers_list:
+        x = int((i / (pop_list_total[0][1])) * 100)
+        twitter_POP_list.append(x)
+
+    spotify_followers_list = []
+    for s, _, _ in pop_list_total:
+        spotify_followers_list.append(s)
+    
+    cur.execute("SELECT MAX(artist_followers) FROM spotify_artists_table")
+    max_followers = cur.fetchone()[0]
+    spotify_POP_list = []
+    for i in spotify_followers_list:
+        x = int((i / (max_followers)) * 100)
+        spotify_POP_list.append(x)
+
     with open('artist_popularity_calc.txt', 'w') as f:
-        for data in pop_list_total:
-            f.write((str(pop_list_total[data][2])) + " has a Spotify popularity index of " + pop_list_total[data][0] + " and a Twitter popularity index of  " + pop_list_total[data][1] +".\n")
+        for i in range(len(pop_list_total)):
+            f.write((str(pop_list_total[i][2])) + " has a Spotify popularity index of " + str(spotify_POP_list[i]) + " and a Twitter popularity index of " + str(twitter_POP_list[i]) + ".\n")
         
 
     
@@ -158,9 +191,9 @@ def create_visual_two(cur,conn):
     
 def main():
     cur, conn = open_database('finalProjectDB.db')
-    create_visual_one(cur, conn)
-    create_visual_two(cur,conn)
-
+    # create_visual_one(cur, conn)
+    # create_visual_two(cur,conn)
+    create_artist_popularity_calc(cur, conn)
 
     #### FEEL FREE TO USE THIS SPACE TO TEST OUT YOUR FUNCTIONS
 
