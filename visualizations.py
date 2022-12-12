@@ -150,7 +150,7 @@ def create_song_popularity_calc(cur,conn):
             shazam_track_name = shazam_track_POP_search['tracks']['items'][0]['name']
             f.write(str(song[2]) + "'s top spotify track, " + top_track_name + ", has a popularity of " + str(top_track_POP) +
                     " and their most shazamed song, " + shazam_track_name + ", has a popularity of " + str(shazam_track_POP) + ".\n")
-                    
+
 def create_artist_popularity_calc(cur,conn):
     cur.execute("SELECT spotify_artists_table.artist_followers, twitter_artists_table.artist_followers, spotify_artists_table.artist_name \
         FROM spotify_artists_table JOIN twitter_artists_table ON spotify_artists_table.artist_id = twitter_artists_table.artist_id \
@@ -191,9 +191,10 @@ def create_artist_popularity_calc(cur,conn):
     
 def main():
     cur, conn = open_database('finalProjectDB.db')
-    # create_visual_one(cur, conn)
-    # create_visual_two(cur,conn)
+    create_visual_one(cur, conn)
+    create_visual_two(cur,conn)
     create_artist_popularity_calc(cur, conn)
+    create_song_popularity_calc(cur,conn)
 
     #### FEEL FREE TO USE THIS SPACE TO TEST OUT YOUR FUNCTIONS
 
