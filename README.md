@@ -1,2 +1,1 @@
-# si206finalproject
-Final Project for the Cool Dawgs
+Web Scraper to compare artist popularity of Rolling Stones Top 200 List on Twitter and Spotify
